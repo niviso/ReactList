@@ -8,6 +8,8 @@ class List extends Component{
   constructor(props) {
     super(props);
     this.state = {
+       id: 1,
+       title: null,
        items: [],
        historyItems : [],
        input : null
@@ -16,12 +18,18 @@ class List extends Component{
 
   }
   componentDidMount(){
+    if(!this.state.title){
+      this.setState({
+        title: "New List l" + this.state.id
+      })
+    }
       this.getItems();
   }
   getItems = () => {
+    let items = JSON.parse(LocalStorageHelper.getStorage("launcher_items_"+this.state.id));
     this.setState((prevState) => {
       return {
-        items: JSON.parse(LocalStorageHelper.getStorage("list"))
+        items: items || []
       };
     });
 
@@ -39,7 +47,7 @@ class List extends Component{
           items: prevState.items.concat(newItem)
         };
       }, () => {
-        LocalStorageHelper.setStorage(JSON.stringify(this.state.items));
+        LocalStorageHelper.setStorage(JSON.stringify(this.state.items),"launcher_items_"+this.state.id);
         this.state.input.value = "";
       });
     }
@@ -58,7 +66,7 @@ class List extends Component{
     items: filteredItems,
     historyItems: newHistoryItems
   }, () => {
-    LocalStorageHelper.setStorage(JSON.stringify(this.state.items));
+    LocalStorageHelper.setStorage(JSON.stringify(this.state.items),"launcher_items_"+this.state.id);
     this.state.input.value = "";
   });
 }
@@ -88,7 +96,7 @@ setInput = (a) => {
   render() {
     return (
       <div className="listWrapper">
-      <div className="listTitle">Nikkis list</div>
+      <div className="listTitle">{this.state.title}</div>
       <ListInput keyinput={this.keyInput} setinput={this.setInput}/>
       <div className="list">
         <ListItem entries={this.state.items} delete={this.deleteItem}/>
