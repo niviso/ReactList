@@ -3,6 +3,8 @@ import ListItem from '../../parts/list-item/list-item';
 import LocalStorageHelper from '../../helpers/LocalStorageHelper';
 import StringHelper from '../../helpers/StringHelper';
 import ListInput from '../../parts/list-input/list-input';
+import ListTitle from '../../parts/list-title/list-title';
+
 import UserManager from '../../managers/UserManager';
 class List extends Component{
   constructor(props) {
@@ -26,10 +28,11 @@ class List extends Component{
       this.getItems();
   }
   getItems = () => {
-    let items = JSON.parse(LocalStorageHelper.getStorage("launcher_items_"+this.state.id));
+    let list = JSON.parse(LocalStorageHelper.getStorage("launcher_items_"+this.state.id));
     this.setState((prevState) => {
       return {
-        items: items || []
+        title: list.title || "My list",
+        items: list.items || []
       };
     });
 
@@ -47,7 +50,7 @@ class List extends Component{
           items: prevState.items.concat(newItem)
         };
       }, () => {
-        LocalStorageHelper.setStorage(JSON.stringify(this.state.items),"launcher_items_"+this.state.id);
+        this.save();
         this.state.input.value = "";
       });
     }
@@ -66,9 +69,28 @@ class List extends Component{
     items: filteredItems,
     historyItems: newHistoryItems
   }, () => {
-    LocalStorageHelper.setStorage(JSON.stringify(this.state.items),"launcher_items_"+this.state.id);
+    this.save();
     this.state.input.value = "";
   });
+}
+
+getList = () => {
+  return JSON.stringify({
+    title: this.state.title,
+    items: this.state.items
+  });
+}
+
+updateTitle = (title) => {
+  this.setState({
+    title: title
+  },() => {
+    this.save();
+  });
+}
+
+save = () => {
+  LocalStorageHelper.setStorage(this.getList(),"launcher_items_"+this.state.id);
 }
 
 keyInput = (e) => {
@@ -96,7 +118,7 @@ setInput = (a) => {
   render() {
     return (
       <div className="listWrapper">
-      <div className="listTitle">{this.state.title}</div>
+      <ListTitle updateTitle={this.updateTitle} title={this.state.title}/>
       <ListInput keyinput={this.keyInput} setinput={this.setInput}/>
       <div className="list">
         <ListItem entries={this.state.items} delete={this.deleteItem}/>

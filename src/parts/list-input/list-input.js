@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Moment from 'react-moment';
 class ListInput extends Component{
   constructor(props) {
   super(props);
@@ -21,7 +20,6 @@ keyInput = (e) => {
 }
 
 setInput = () => {
-  console.log(this.input);
   this.props.setinput(this.input);
 }
 
