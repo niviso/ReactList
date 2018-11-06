@@ -13,18 +13,18 @@ class ListTitle extends Component{
 }
 keyInput = (e) => {
   if(e.keyCode === 13){
-    this.props.updateTitle(this.input.value);
-    this.setState({
-      focused: false
-    });
+    this.updatePropTitle();
     e.preventDefault();
   }
 }
 
-
-test = (e) =>{
-
+updatePropTitle = () => {
+  this.props.updateTitle(this.input.value);
+  this.setState({
+    focused: false
+  });
 }
+
 
 onBlur = () => {
     this.setState({ focused: false })
@@ -50,7 +50,7 @@ onFocus = () => {
         />
         </div>
         <div className="listSubmit">
-          <div className={this.state.focused ? '' : 'hidden'}>
+          <div onClick={() => this.updatePropTitle()} className={this.state.focused ? '' : 'hidden'}>
           Submit
           </div>
         </div>
