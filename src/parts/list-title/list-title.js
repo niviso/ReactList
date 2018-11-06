@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import './list-title.scss';
-
+import './ListTitle.scss';
 class ListTitle extends Component{
   constructor(props) {
   super(props);
@@ -21,6 +20,7 @@ keyInput = (e) => {
     e.preventDefault();
   }
 }
+
 
 test = (e) =>{
 
