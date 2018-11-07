@@ -43,11 +43,12 @@ onFocus = () => {
       <div onClick={this.onFocus} className={this.state.focused ? 'hidden' : ''}>
       <div className="listTitle">{this.props.title}</div>
       </div>
-      <div className={this.state.focused ? 'listItemText' : 'hidden'}>
+      <div className={this.state.focused ? '' : 'hidden'}>
         <input
         ref={(a) => this.input = a}
         onKeyDown={(e) => this.keyInput(e)}
         placeholder="Name of your list"
+        className="TitleInput"
         />
         </div>
         <div className="listSubmit">

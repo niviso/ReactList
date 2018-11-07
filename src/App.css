@@ -148,6 +148,7 @@ transition: 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #8a3b33;
 
 }
 
