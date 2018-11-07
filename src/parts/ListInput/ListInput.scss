@@ -1,0 +1,52 @@
+.listInput{
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+  width: 100%;
+  font-size: 1.5em;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #8a3b33;
+
+}
+
+.listInput:focus{
+  box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+
+}
+
+
+.listItemText{
+  margin-left: 10px;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.listItemText:hover{
+  cursor: context-menu;
+}
+
+
+.listCleanUp
+{
+  height: 75px;
+  width: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5em;
+  cursor: pointer;
+  color: white;
+}
+
+
+@media only screen
+and (min-width : 375px)
+and (max-width : 812px){
+
+.listCleanUp{
+  display: none;
+}
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './ListInput.scss';
 class ListInput extends Component{
   constructor(props) {
   super(props);

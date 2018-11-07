@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ListItem from '../../parts/list-item/list-item';
+import ListItem from '../../parts/ListItem/ListItem';
 import LocalStorageHelper from '../../helpers/LocalStorageHelper';
 import StringHelper from '../../helpers/StringHelper';
 import ListInput from '../../parts/ListInput/ListInput';
