@@ -25,6 +25,10 @@
 
 }
 
+.fill-w{
+  width: 100%;
+}
+
 input{
   font-family: 'Roboto', sans-serif;
   background: transparent;
