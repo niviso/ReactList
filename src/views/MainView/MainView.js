@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from '../../parts/list/list';
+import List from '../../parts/List/List';
 import './MainView.css';
 
 class MainView extends Component {

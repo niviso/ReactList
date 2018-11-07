@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ListItem from '../../parts/list-item/list-item';
 import LocalStorageHelper from '../../helpers/LocalStorageHelper';
 import StringHelper from '../../helpers/StringHelper';
-import ListInput from '../../parts/list-input/list-input';
-import ListTitle from '../../parts/list-title/list-title';
+import ListInput from '../../parts/ListInput/ListInput';
+import ListTitle from '../../parts/ListTitle/ListTitle';
 
 import UserManager from '../../managers/UserManager';
 class List extends Component{
