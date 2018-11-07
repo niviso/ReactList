@@ -22,7 +22,7 @@ class List extends Component{
   componentDidMount(){
     if(!this.state.title){
       this.setState({
-        title: "New List l" + this.state.id
+        title: "New List " + this.state.id
       })
     }
       this.getItems();
