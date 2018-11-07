@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
+import './ListItem.scss';
 class ListItem extends Component{
   constructor(props) {
   super(props);

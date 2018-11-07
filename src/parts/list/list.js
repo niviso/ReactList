@@ -4,7 +4,7 @@ import LocalStorageHelper from '../../helpers/LocalStorageHelper';
 import StringHelper from '../../helpers/StringHelper';
 import ListInput from '../../parts/ListInput/ListInput';
 import ListTitle from '../../parts/ListTitle/ListTitle';
-
+import './List.scss';
 import UserManager from '../../managers/UserManager';
 class List extends Component{
   constructor(props) {
