@@ -31,6 +31,7 @@ onBlur = () => {
 }
 onFocus = () => {
     this.setState({ focused: true }, () => {
+      this.input.value = this.props.title;
       this.input.focus();
     });
 }
