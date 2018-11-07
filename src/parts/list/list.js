@@ -11,7 +11,7 @@ class List extends Component{
     super(props);
     this.state = {
        id: 1,
-       title: null,
+       title: "",
        items: [],
        historyItems : [],
        input : null
@@ -29,12 +29,14 @@ class List extends Component{
   }
   getItems = () => {
     let list = JSON.parse(LocalStorageHelper.getStorage("launcher_items_"+this.state.id));
-    this.setState((prevState) => {
-      return {
-        title: list.title || "My list",
-        items: list.items || []
-      };
-    });
+    if(list){
+      this.setState((prevState) => {
+        return {
+          title: list.title || "My list",
+          items: list.items || []
+        };
+      });
+    }
 
   }
   addItem = () => {
