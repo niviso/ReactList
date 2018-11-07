@@ -1,3 +1,5 @@
+
+@import '../../AppVariables.scss';
 .list{
   width: 700px;
   background: white;
@@ -31,9 +33,8 @@ transition: 0.25s ease;
 }
 
 
-@media only screen
-and (min-width : 375px)
-and (max-width : 812px){
+@include breakpoint(mobileonly) {
+
 .list{
   width: 100%;
   height: 100%;
