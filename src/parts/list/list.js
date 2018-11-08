@@ -33,7 +33,8 @@ class List extends Component{
       this.setState((prevState) => {
         return {
           title: list.title || "My list",
-          items: list.items || []
+          items: list.items || [],
+          historyItems: list.history || []
         };
       });
     }
@@ -79,7 +80,8 @@ class List extends Component{
 getList = () => {
   return JSON.stringify({
     title: this.state.title,
-    items: this.state.items
+    items: this.state.items,
+    history: this.state.historyItems
   });
 }
 
@@ -121,7 +123,7 @@ setInput = (a) => {
     return (
       <div className="listWrapper">
       <ListTitle updateTitle={this.updateTitle} title={this.state.title}/>
-      <ListInput keyinput={this.keyInput} setinput={this.setInput}/>
+      <ListInput additem={this.addItem} history={this.state.historyItems} keyinput={this.keyInput} setinput={this.setInput}/>
       <div className="list">
         <ListItem entries={this.state.items} delete={this.deleteItem}/>
 

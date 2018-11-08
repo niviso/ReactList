@@ -1,3 +1,8 @@
+
+.ListInputWrapper{
+  width: 100%;
+  max-width: 700px;
+}
 .listInput{
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   width: 100%;
@@ -6,18 +11,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+    background: transparent;
   background: #8a3b33;
-  width: 100%;
-  max-width: 700px;
 
 }
+
+
 
 .listInput:focus{
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
 
 }
 
-
+.autoSuggest{
+  color: white;
+  padding: 10px 0px 10px 0px;
+  width: 100%;
+  text-align: center;
+}
 .listItemText{
   margin-left: 10px;
   width: 100%;
