@@ -51,6 +51,9 @@ setInput = () => {
 
 clear = () => {
   this.input.value = '';
+  this.setState({
+    autoSuggest: this.autoSuggest()
+  });
   this.ToggleClean();
 
 }
@@ -70,12 +73,13 @@ onFocus = () => {
     this.setState({ focused: true })
 }
 
-setInputValue = (value) => {
+addAutoSuggest = (value) => {
   this.input.value = value;
   this.input.focus();
   this.setState({
     autoSuggest: null
   });
+  this.props.additem();
 }
 
   render() {
@@ -94,10 +98,10 @@ setInputValue = (value) => {
           <div className={this.state.showClean ? '' : 'hidden'} onClick={() => this.clear()}>
           Clear
           </div>
-        </div>
-        </div>
-        <div className={this.state.autoSuggest ? 'autoSuggest' : 'hidden'} onClick={() => this.setInputValue(this.state.autoSuggest)}>
-        Did you mean {this.state.autoSuggest || ""}?
+          </div>
+          <div className={this.state.autoSuggest ? 'autoSuggest' : 'hidden'} onClick={() => this.addAutoSuggest(this.state.autoSuggest)}>
+          Did you mean {this.state.autoSuggest || ""}?
+          </div>
         </div>
         </div>
     );
