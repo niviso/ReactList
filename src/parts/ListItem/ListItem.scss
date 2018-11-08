@@ -8,8 +8,8 @@
 }
 
 .checkBox{
-  width: 30px;
-  height:30px;
+  width: 1.5em;
+  height:1.5em;
   border: 1px solid black;
 position: relative;
 overflow: hidden;
@@ -29,8 +29,8 @@ transition: 0.25s ease;
   position: absolute;
   left:0;
   top:-100%;
-  width: 30px;
-  height:30px;
+  width: 1.5em;
+  height:1.5em;
   background: #7B2D26;/*#7B2D26;*/
   border-radius: 0 0 50% 50%;
 }
@@ -45,7 +45,7 @@ transition: 0.25s ease;
 .listItem{
   width: 100%;
   font-size: 1.5em;
-  height: 75px;
+  height: 3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,8 +64,8 @@ transition: 0.25s ease;
 
 .listItemRemove{
   background: transparent;
-  height: 75px;
-  width: 75px;
+  height: 3em;
+  width: 3em;
   display: flex;
   align-items: center;
   justify-content: center;

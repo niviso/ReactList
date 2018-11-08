@@ -54,11 +54,6 @@ onFocus = () => {
         maxLength="40"
         />
         </div>
-        <div className="listSubmit">
-          <div onClick={() => this.updatePropTitle()} className={this.state.focused ? '' : 'hidden'}>
-          Submit
-          </div>
-        </div>
         </div>
     );
   }

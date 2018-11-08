@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from '../../parts/List/List';
-import './MainView.css';
+import './MainView.scss';
 
 class MainView extends Component {
 

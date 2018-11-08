@@ -2,11 +2,13 @@
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
   width: 100%;
   font-size: 1.5em;
-  height: 75px;
+  height: 3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #8a3b33;
+  width: 100%;
+  max-width: 700px;
 
 }
 
@@ -31,8 +33,8 @@
 
 .listCleanUp
 {
-  height: 75px;
-  width: 75px;
+  height: 3em;
+  width: 3em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -43,7 +45,7 @@
 
 
 @media only screen
-and (min-width : 375px)
+and (min-width : 33em)
 and (max-width : 812px){
 
 .listCleanUp{

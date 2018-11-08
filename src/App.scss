@@ -1,9 +1,17 @@
+@import './AppVariables.scss';
+
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 ::-webkit-scrollbar {
     display: none;
 }
+*{
+  padding: 0px;
+  margin: 0px;
+}
 .app {
   position: absolute;
+  top:0%;
+  left:0%;
   padding:0px;
   margin:0px;
   background: #7B2D26;
@@ -47,3 +55,8 @@ input::placeholder{
 }
 
 .hidden { display:none; }
+
+
+@include breakpoint(tablet) {
+
+}
