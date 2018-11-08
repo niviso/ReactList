@@ -19,7 +19,7 @@ keyInput = (e) => {
 }
 
 updatePropTitle = () => {
-  this.props.updateTitle(this.input.value);
+  this.props.updateTitle(this.input.innerHTML);
   this.setState({
     focused: false
   });
@@ -32,7 +32,7 @@ onBlur = () => {
 }
 onFocus = () => {
     this.setState({ focused: true }, () => {
-      this.input.value = this.props.title;
+      this.input.innerHTML = this.props.title;
       this.input.focus();
     });
 }
@@ -45,13 +45,14 @@ onFocus = () => {
       <div className="listTitle">{this.props.title}</div>
       </div>
       <div className={this.state.focused ? 'fill-w' : 'hidden'}>
-        <input
+        <div
         ref={(a) => this.input = a}
         onKeyDown={(e) => this.keyInput(e)}
         placeholder="Name of your list"
         className="TitleInput"
         onBlur={this.onBlur}
         maxLength="40"
+        contentEditable="true"
         />
         </div>
         </div>
