@@ -17,7 +17,7 @@ componentDidMount(){
 }
 
 autoSuggest = () => {
-  if(this.input.value.length == 0 ){
+  if(this.input.value.length == 0 && this.props.history.length == 0){
     return null;
   }
   var arr = this.props.history.filter( (item) => {

@@ -4,9 +4,9 @@ import LocalStorageHelper from '../../helpers/LocalStorageHelper';
 import StringHelper from '../../helpers/StringHelper';
 import ListInput from '../../parts/ListInput/ListInput';
 import ListTitle from '../../parts/ListTitle/ListTitle';
-import './List.scss';
+import './MyList.scss';
 import UserManager from '../../managers/UserManager';
-class List extends Component{
+class MyList extends Component{
   constructor(props) {
     super(props);
     this.state = {
@@ -145,4 +145,4 @@ setInput = (a) => {
     );
   }
 }
-export default List;
+export default MyList;

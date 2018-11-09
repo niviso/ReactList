@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from '../../parts/List/List';
+import MyList from '../../parts/MyList/MyList';
 import './MainView.scss';
 
 class MainView extends Component {
@@ -7,7 +7,7 @@ class MainView extends Component {
   render() {
     return (
       <div className="MainView">
-      <List />
+      <MyList />
       </div>
     );
   }
